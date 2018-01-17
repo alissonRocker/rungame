@@ -1,0 +1,17 @@
+{
+  "name": "rungame",
+  "version": "1.0.0",
+  "description": "system for control and organization of football",
+  "author": "ALISSON VALDIR DE SOUZA",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
