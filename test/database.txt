@@ -1,0 +1,37 @@
+CREATE SCHEMA rungame;
+
+use rungame;
+
+CREATE TABLE user (
+	id integer not null auto_increment,
+    username varchar(60) not null,
+    login varchar(30) not null,
+    password varchar(100) not null,
+    register date,
+    primary key(id)
+);
+
+CREATE TABLE game(
+	id integer not null auto_increment,
+    date date not null,
+    init_hour time not null,
+    duration time not null,
+    size int not null,
+    value_unit numeric(7,2),
+    primary key(id)
+);
+
+CREATE TABLE user_game(
+	id_game integer not null,
+    id_user integer not null,
+    foreign key(id_game) references game(id),
+    foreign key(id_user) references user(id)
+);
+
+CREATE TABLE pay(
+	id_game integer not null,
+    id_user integer not null,
+    date timestamp not null,
+    foreign key(id_game) references game(id),
+    foreign key(id_user) references user(id)
+);
